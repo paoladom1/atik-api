@@ -6,7 +6,6 @@ import models from "./models";
 
 const app = express();
 
-
 app.use(bodyParser.json());
 
 let port = process.env.PORT || 8080;
@@ -35,7 +34,7 @@ require("./config/passport")(passport);
 app.get("/", (req, res) => res.send("Hello my World"));
 
 require("./routes/user.js")(app);
-
+require("./routes/product.js")(app);
 
 //create a server
 var server = app.listen(port, function() {
