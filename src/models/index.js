@@ -19,6 +19,10 @@ const config = {
     acquire: 30000,
     idle: 10000,
   },
+  define: {
+    freezeTableName: true,
+    timestamps: false
+  }
 };
 
 const db = {};

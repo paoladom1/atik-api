@@ -31,7 +31,7 @@ module.exports = (app) => {
     passport.authenticate('jwt', {
       session: false,
     }),
-    allowOnly(config.accessLevels.admin, findById)
+    allowOnly(config.accessLevels.client, findById)
   );
 
   // update a user with id
@@ -40,7 +40,7 @@ module.exports = (app) => {
     passport.authenticate('jwt', {
       session: false,
     }),
-    allowOnly(config.accessLevels.user, update)
+    allowOnly(config.accessLevels.client, update)
   );
 
   // delete a user
