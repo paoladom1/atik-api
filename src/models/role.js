@@ -1,16 +1,16 @@
 export default (sequelize, DataTypes) => {
-  const Role = sequelize.define("rol", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      field: "id_rol"
-    },
-    role: {
-      type: DataTypes.STRING,
-      field: "rol"
-    }
-  });
+    const Role = sequelize.define("rol", {
+        role: {
+            type: DataTypes.STRING,
+            field: "rol",
+        },
+    });
 
-  return Role;
+    Role.associate = function (models) {
+        Role.hasMany(models.usuario, {
+            foreignKey: "role",
+        });
+    };
+
+    return Role;
 };

@@ -1,11 +1,5 @@
 export default (sequelize, DataTypes) => {
   const Product = sequelize.define("producto", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      field: "id_producto"
-    },
     name: {
       type: DataTypes.STRING,
       field: "nombre"
@@ -39,17 +33,13 @@ export default (sequelize, DataTypes) => {
   Product.associate = function(models) {
     // associations go here
     Product.belongsToMany(models.categoria, {
-      through: "productoxcategoria",
-      as: "categories",
-      foreignKey: "id_producto",
-      otherKey: "id_categoria"
+      through: 'productocategoria',
+      as: 'categories'
     });
 
-    Product.belongsToMany(models.categoria, {
-      through: "productoxorden",
-      as: "ordenes",
-      foreignKey: "id_producto",
-      otherKey: "id_orden"
+    Product.belongsToMany(models.orden, {
+      through: 'productoorden',
+      as: "orders",
     });
   };
 

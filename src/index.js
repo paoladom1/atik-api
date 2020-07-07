@@ -3,9 +3,11 @@ import passport from "passport";
 import bodyParser from "body-parser";
 import cors from "cors";
 import models from "./models";
+import morgan from 'morgan';
 
 const app = express();
 
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 
 let port = process.env.PORT || 8080;
@@ -35,6 +37,10 @@ app.get("/", (req, res) => res.send("Hello my World"));
 
 require("./routes/user.js")(app);
 require("./routes/product.js")(app);
+require("./routes/category")(app);
+require("./routes/location")(app);
+require("./routes/promotion")(app);
+require("./routes/order")(app);
 
 //create a server
 var server = app.listen(port, function() {

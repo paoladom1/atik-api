@@ -1,11 +1,5 @@
 export default (sequelize, DataTypes) => {
   const Location = sequelize.define("ubicacion", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      field: "id_promocion"
-    },
     name: {
       type: DataTypes.STRING,
       field: "nombre"
@@ -18,6 +12,10 @@ export default (sequelize, DataTypes) => {
 
   Location.associate = function(models) {
     // associations go here
+    Location.hasMany(models.orden, {
+      foreignKey: 'id_ubicacion',
+      as: 'orders'
+    });
   };
 
   return Location;

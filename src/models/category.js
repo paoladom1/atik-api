@@ -1,11 +1,5 @@
 export default (sequelize, DataTypes) => {
   const Category = sequelize.define("categoria", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      field: "id_categoria"
-    },
     name: {
       type: DataTypes.STRING,
       field: 'nombre'
@@ -13,16 +7,18 @@ export default (sequelize, DataTypes) => {
     description: {
       type: DataTypes.STRING,
       field: 'descripcion'
+    },
+    imageUrl: {
+      type: DataTypes.STRING,
+      field: "imagen"
     }
   });
     
   Category.associate = function(models) {
     // associations go here
     Category.belongsToMany(models.producto, {
-      through: 'productoxcategoria',
+      through: 'productocategoria',
       as: 'products',
-      foreignKey: 'id_categoria',
-      otherKey: 'id_producto'
     })
   };
 
