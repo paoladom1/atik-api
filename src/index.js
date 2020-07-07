@@ -6,6 +6,7 @@ import models from "./models";
 import morgan from 'morgan';
 
 const app = express();
+const { pool } = ('./config');
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
