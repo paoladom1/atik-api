@@ -7,7 +7,7 @@ const findAllCategories = (req, res) => {
         include: [{ model: Product, as: "products", nested: false }],
     })
         .then((categories) => {
-            res.json({ categories });
+            res.json(categories);
         })
         .catch((err) => res.status(500).json({ err }));
 };
