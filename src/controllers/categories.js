@@ -26,11 +26,11 @@ const findById = (req, res) => {
 };
 
 const create = (req, res) => {
-    let { name, description } = req.body;
+    let { name, imageUrl } = req.body;
 
     const newCategory = {
         name,
-        description,
+        imageUrl,
     };
 
     Category.create(newCategory)
