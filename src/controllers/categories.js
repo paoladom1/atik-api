@@ -1,4 +1,5 @@
 import db from "../models";
+import category from "../models/category";
 const Product = db.producto;
 const Category = db.categoria;
 
@@ -38,4 +39,19 @@ const create = (req, res) => {
         .catch((err) => res.status(500).json({ err }));
 };
 
-export { create, findAllCategories, findById };
+const update = (req, res) => {
+    const { imageUrl } = req.body;
+
+    const id = req.params.categoryId;
+
+    Category.update(
+        {
+            imageUrl,
+        },
+        { where: { id } }
+    )
+        .then((category) => res.json(category))
+        .catch((err) => res.status(500).json({ err }));
+};
+
+export { update, create, findAllCategories, findById };
