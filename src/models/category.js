@@ -4,10 +4,6 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       field: 'nombre'
     },
-    description: {
-      type: DataTypes.STRING,
-      field: 'descripcion'
-    },
     imageUrl: {
       type: DataTypes.STRING,
       field: "imagen"

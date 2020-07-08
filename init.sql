@@ -3,7 +3,6 @@ CREATE EXTENSION pgcrypto;
 CREATE TABLE public.categoria (
 	id serial NOT NULL,
 	nombre varchar(255) NULL,
-	descripcion varchar(255) NULL,
 	imagen varchar(255) NULL,
 	CONSTRAINT categoria_pkey PRIMARY KEY (id)
 );
