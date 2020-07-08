@@ -3,6 +3,7 @@ import config from "../config/config";
 import { allowOnly } from "../services/routesHelper";
 import {
     update,
+    updateAll,
     create,
     findById,
     findAllCategories,
@@ -19,6 +20,12 @@ module.exports = (app) => {
         "/api/categories/:categoryId/",
         passport.authenticate("jwt", { session: false }),
         allowOnly(config.accessLevels.admin, update)
+    );
+
+    app.put(
+        "/api/categories/",
+        passport.authenticate("jwt", { session: false }),
+        allowOnly(config.accessLevels.admin, updateAll)
     );
 
     app.get("/api/categories", findAllCategories);

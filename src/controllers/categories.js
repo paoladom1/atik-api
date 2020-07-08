@@ -54,4 +54,19 @@ const update = (req, res) => {
         .catch((err) => res.status(500).json({ err }));
 };
 
-export { update, create, findAllCategories, findById };
+const updateAll = (req, res) => {
+    const { imageUrl } = req.body;
+
+    Category.update(
+        {
+            imageUrl,
+        },
+        {
+            where: { imageUrl: null },
+        }
+    )
+        .then((categories) => res.json(categories))
+        .catch((err) => res.status(500).json({ err }));
+};
+
+export { updateAll, update, create, findAllCategories, findById };
