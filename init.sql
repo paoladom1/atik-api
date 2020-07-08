@@ -100,7 +100,7 @@ insert into usuario (nombre, apellido, telefono, correo, nombre_usuario, contras
 insert into usuario (nombre, apellido, telefono, correo, nombre_usuario, contrasenia, role) Values ('admin',	'admin', 	'12345678',	'admin@admin.com',	'admin', crypt('administrador', gen_salt('bf')), 1);
 
 
-insert into categoria (nombre) values ('Galletas'),('Cupcakes'),('Pasteles'),('Salados'),('Ocasiones Especiales'),('Veganos y Gluten Free');
+insert into categoria (nombre, imagen) values ('Galletas', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167163/proyectoMoviles/Galletas.jpg'),('Cupcakes', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167167/proyectoMoviles/Cupcakes.jpg'),('Pasteles', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167152/proyectoMoviles/Pasteles.jpg'),('Salados', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167159/proyectoMoviles/Salados.jpg'),('Ocasiones Especiales', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167250/proyectoMoviles/Ocasiones%20especiales.jpg'),('Veganos y Gluten Free', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167147/proyectoMoviles/GlutenFree.jpg');
 
 insert into producto (nombre, precio, descripcion, sabor, tamanio, indicaciones, imagen) values
 	('Choco-Chips',	1,	'Galletas con chispas de chocolate', null, null, null, null),	
