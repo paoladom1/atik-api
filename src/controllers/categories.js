@@ -40,12 +40,13 @@ const create = (req, res) => {
 };
 
 const update = (req, res) => {
-    const { imageUrl } = req.body;
+    const { name, imageUrl } = req.body;
 
     const id = req.params.categoryId;
 
     Category.update(
         {
+            name,
             imageUrl,
         },
         { where: { id } }

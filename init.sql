@@ -99,7 +99,7 @@ insert into usuario (nombre, apellido, telefono, correo, nombre_usuario, contras
 insert into usuario (nombre, apellido, telefono, correo, nombre_usuario, contrasenia, role) Values ('admin',	'admin', 	'12345678',	'admin@admin.com',	'admin', crypt('administrador', gen_salt('bf')), 1);
 
 
-insert into categoria (nombre, imagen) values ('Galletas', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167163/proyectoMoviles/Galletas.jpg'),('Cupcakes', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167167/proyectoMoviles/Cupcakes.jpg'),('Pasteles', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167152/proyectoMoviles/Pasteles.jpg'),('Salados', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167159/proyectoMoviles/Salados.jpg'),('Ocasiones Especiales', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167250/proyectoMoviles/Ocasiones%20especiales.jpg'),('Veganos y Gluten Free', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594167147/proyectoMoviles/GlutenFree.jpg');
+insert into categoria (nombre, imagen) values ('Galletas', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594507093/proyectoMoviles/64px/cookies_ldtg0g.png'),('Pasteles', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594507149/proyectoMoviles/64px/apple-pie_veseky.png'),('Cupcakes', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594507093/proyectoMoviles/64px/muffin_1_e5lrbs.png'),('Salados', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594507093/proyectoMoviles/64px/bread_rr1aai.png'),('Ocasiones Especiales', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594507093/proyectoMoviles/64px/wedding-cake_hirved.png'),('Veganos y Gluten Free', 'https://res.cloudinary.com/dw8gae3co/image/upload/v1594507093/proyectoMoviles/64px/gluten-free_j10v0s.png');
 
 insert into producto (nombre, precio, descripcion, sabor, tamanio, indicaciones, imagen) values
 	('Choco-Chips',	1,	'Galletas con chispas de chocolate', null, null, null, null),	
@@ -110,6 +110,10 @@ insert into producto (nombre, precio, descripcion, sabor, tamanio, indicaciones,
 	('Black and White',	1,	'Galletas cubiertas mitad y mitad con glaseado de chocolate y vainilla', null, null, null, null),
 	('Galleta de chocolate blanco',	1,	'Galletas de chocolate blanco', null, null, null, null),
 	('Galleta de mantequilla',	1,	'Galletas de mantequilla en formas variadas', null, null, null, null),
+	('Galleta de jengibre',	1,	'Galletas de jengibre',	'Jengibre', null, null, null),
+	('Galletas de avena y fresa',	1,	'Galletas de avena con trozos de fresas	Avena', null, null, null, null),	
+	('Galletas de limón', 	1,	'Galletas de limón craqueladas de chocolate',	'Limón', null, null, null),
+	
 	('Pastel de chocolate',	17,	'Pastel de chocolate con relleno de caramelo',	'Chocolate',	12, null, null),
 	('Pastel de zanahoria',	19,	'Pastel de zanahoria con cubierta de queso crema',	'Zanahoria', 12, null, null),
 	('Cheesecake',	22,	'Cheesecake', null, 12, null, null),
@@ -118,9 +122,7 @@ insert into producto (nombre, precio, descripcion, sabor, tamanio, indicaciones,
 	('Mini pastel de chocolate',	7,	'Pastel de chocolate con relleno de caramelo',	'Chocolate', 6, null, null),
 	('Mini pastel de zanahoria',	10,	'Pastel de zanahoria con cubierta de queso crema',	'Zanahoria', 6, null, null),
 	('Pastel de Nutella',	18,	'Pastel de vainilla con relleno de nutella y cubierto con ganache de chocolate blanco', 'Vainilla', 16, null, null),
-	('Galleta de jengibre',	1,	'Galletas de jengibre',	'Jengibre', null, null, null),
-	('Galletas de avena y fresa',	1,	'Galletas de avena con trozos de fresas	Avena', null, null, null, null),	
-	('Galletas de limón', 	1,	'Galletas de limón craqueladas de chocolate',	'Limón', null, null, null),
+
 	('Cupcake de naranja',	1,	'Cupcake de vainilla con mermelada de naranja',	'Vainilla', null, null, null),	
 	('Cupcake red velvet',	1,	'Cupcake red velvet con cubierta de crema', 'Red Velvet', null, null, null),
 	('Cupcake de vainilla con flores',	2,	'Cupcake de vainilla decorado con flores comestibles',	'Vainilla', null, null, null),
@@ -129,11 +131,14 @@ insert into producto (nombre, precio, descripcion, sabor, tamanio, indicaciones,
 	('Cupcake de zanahoria',	2,	'Cupcake de zanahoria con cubierta de queso crema',	'Zanahoria', null, null, null),	
 	('Cupcake de limón',	2,	'Cupcake de limón, rellenos con crema de limón y cubiertos con crema de mantequilla',	'Limón', null, null, null),
 	('Cupcake de vainilla',	1,	'Cupcake de vainilla con cubierta de chocolate',	'Vainilla', null, null, null),
+
 	('Empanada chilena',	1,	'Empanada chilena de queso', null, null, null, null),	
 	('Croissant',	1,	'Croissant relleno de jamon y queso', null, null, null, null),
 	('Focaccia', 	1,	'Focaccia italiana servida con mezcla de quesos', null, null, null, null),
+
 	('Pastel de cumpleaños', 	18,	'Torta de vainilla relleno de caramelo con mensaje especial de cumpleaños',	'Vainilla',	16, null, null),
 	('Pastel con rosas', 18,	'Torta de vainilla relleno de mermelada decorado con rosas', null, null, null, null),
+	
 	('Pastel de chocolate Gluten-Free',	19,	'Torta de chocolate vegana y sin gluten', 'Chocolate', 14, null, null),
 	('Brownie Gluten-Free'	, 14, 'Brownie vegano y libre de gluten', 'Chocolate', 10, null, null),
 	('Pastel de fresas Gluten-free', 15,	'Torta con trozos de fresas gluten-free',	'Fresa', 14, null, null);

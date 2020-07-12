@@ -8,6 +8,10 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             field: "descuento",
         },
+        description: {
+            type: DataTypes.STRING,
+            field: "descripcion"
+        }
     });
 
     Promotion.associate = function (models) {

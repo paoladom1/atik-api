@@ -2,11 +2,12 @@ import db from "../models";
 const Promotions = db.promocion;
 
 const create = (req, res) => {
-    let { name, discount } = req.body;
+    let { name, discount, description } = req.body;
 
     const newPromotion = {
         name,
         discount,
+        description,
     };
 
     Promotions.create(newPromotion)
@@ -15,13 +16,14 @@ const create = (req, res) => {
 };
 
 const update = (req, res) => {
-    let { name, discount } = req.body;
+    let { name, discount, description } = req.body;
     const id = req.params.promotionId;
 
     Promotions.update(
         {
             name,
             discount,
+            description,
         },
         { where: { id } }
     )
