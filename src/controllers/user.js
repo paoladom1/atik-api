@@ -49,6 +49,12 @@ const create = (req, res) => {
   });
 };
 
+const me = (req, res) => {
+  const {user} = req;
+
+  res.json({user});
+};
+
 const login = (req, res) => {
   const {errors, isValid} = validateLoginForm(req.body);
 
@@ -88,7 +94,7 @@ const login = (req, res) => {
               payload,
               'secret',
               {
-                expiresIn: 3600,
+                expiresIn: '72h',
               },
               (err, token) => {
                 res.json({
@@ -157,4 +163,4 @@ const deleteUser = (req, res) => {
     .catch(err => res.status(500).json({msg: 'Failed to delete!'}));
 };
 
-export {create, login, findAllUsers, findById, update, deleteUser};
+export {create, login, me, findAllUsers, findById, update, deleteUser};
