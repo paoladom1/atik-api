@@ -14,13 +14,5 @@ export default (sequelize, DataTypes) => {
         }
     });
 
-    Promotion.associate = function (models) {
-        // associations go here
-        Promotion.hasMany(models.orden, {
-            as: "orders",
-            foreignKey: "promotion_id"
-        });
-    };
-
     return Promotion;
 };

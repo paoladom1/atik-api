@@ -39,10 +39,6 @@ export default (sequelize, DataTypes) => {
             foreignKey: "cliente",
         });
 
-        Orden.belongsTo(models.promocion, {
-            as: "promotion",
-            foreignKey: "promotion_id",
-        });
     };
 
     return Orden;

@@ -67,26 +67,24 @@ const deleteOrder = (req, res) => {
 
 const create = (req, res) => {
     const { user } = req;
-    const { type, products, promotionId } = req.body;
-    Promotion.findByPk(promotionId).then(promotion => {
-        const { subtotal, total } = calculateOrderPrice({
-            products,
-            promotion,
-        });
-        console.log(subtotal);
-
-        const newOrder = {
-            type,
-            products,
-            subtotal,
-            total
-        };
-
-        Order.create(newOrder)
-            .then((order) => res.status(200).json({ order }))
-            .catch((err) => res.status(500).json({ err }));
-    }).catch(err => res.status(500).json({ err}));
+    const { type, products, deliveryDate, deliveryTime, shipping, inputDate, state, subtotal, total } = req.body;
     
+
+    const newOrder = {
+        type,
+        products,
+        subtotal,
+        total,
+        deliveryDate,
+        deliveryTime,
+        shipping,
+        inputDate,
+        state,
+    };
+
+    Order.create(newOrder)
+        .then((order) => res.status(200).json({ order }))
+        .catch((err) => res.status(500).json({ err }));
 };
 
 export { create, update, deleteOrder, findAllOrders, findById };
