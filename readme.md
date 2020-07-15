@@ -19,10 +19,10 @@
 - configure your database by creating a .env file in your project root directory with contents similar to
   ```
   DB_HOST=localhost
-  DB_NAME=test
-  DB_USERNAME=root
-  DB_PASSWORD=
-  DB_DIALECT=mysql
+  DB_NAME=atik
+  DB_USERNAME=postgres
+  DB_PASSWORD=postgres
+  DB_DIALECT=postgres
   ```
   make sure to replace the values with yours
 - be sure to have `nodemon` installed

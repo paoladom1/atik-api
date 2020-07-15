@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -9,10 +9,6 @@ exports.default = function (sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       field: 'nombre'
-    },
-    description: {
-      type: DataTypes.STRING,
-      field: 'descripcion'
     },
     imageUrl: {
       type: DataTypes.STRING,

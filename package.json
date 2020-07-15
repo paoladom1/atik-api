@@ -7,7 +7,7 @@
     "dev": "nodemon --exec babel-node src/index.js",
     "build-server": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-server",
-    "start": "node ./build/index.js",
+    "start": "npm run build && node ./build/index.js",
     "debug": "node --debug ./build/index.js"
   },
   "license": "MIT",

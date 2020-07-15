@@ -44,11 +44,6 @@ exports.default = function (sequelize, DataTypes) {
         Orden.belongsTo(models.usuario, {
             foreignKey: "cliente"
         });
-
-        Orden.belongsTo(models.promocion, {
-            as: "promotion",
-            foreignKey: "promotion_id"
-        });
     };
 
     return Orden;

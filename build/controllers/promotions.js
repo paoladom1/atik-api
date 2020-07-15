@@ -16,12 +16,14 @@ var Promotions = _models2.default.promocion;
 var create = function create(req, res) {
     var _req$body = req.body,
         name = _req$body.name,
-        discount = _req$body.discount;
+        discount = _req$body.discount,
+        description = _req$body.description;
 
 
     var newPromotion = {
         name: name,
-        discount: discount
+        discount: discount,
+        description: description
     };
 
     Promotions.create(newPromotion).then(function (promotion) {
@@ -34,13 +36,15 @@ var create = function create(req, res) {
 var update = function update(req, res) {
     var _req$body2 = req.body,
         name = _req$body2.name,
-        discount = _req$body2.discount;
+        discount = _req$body2.discount,
+        description = _req$body2.description;
 
     var id = req.params.promotionId;
 
     Promotions.update({
         name: name,
-        discount: discount
+        discount: discount,
+        description: description
     }, { where: { id: id } }).then(function (promotion) {
         return res.status(200).json({ promotion: promotion });
     }).catch(function (err) {

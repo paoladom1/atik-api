@@ -13,16 +13,12 @@ exports.default = function (sequelize, DataTypes) {
         discount: {
             type: DataTypes.INTEGER,
             field: "descuento"
+        },
+        description: {
+            type: DataTypes.STRING,
+            field: "descripcion"
         }
     });
-
-    Promotion.associate = function (models) {
-        // associations go here
-        Promotion.hasMany(models.orden, {
-            as: "orders",
-            foreignKey: "promotion_id"
-        });
-    };
 
     return Promotion;
 };

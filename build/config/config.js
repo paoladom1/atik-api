@@ -8,7 +8,7 @@ var userRoles = config.userRoles = {
 };
 
 config.accessLevels = {
-    admin: userRoles.admin | userRoles.client,
+    admin: userRoles.admin || userRoles.client,
     client: userRoles.client
 };
 //# sourceMappingURL=config.js.map
